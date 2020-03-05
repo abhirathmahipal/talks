@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>Web Testing Framework in Python</h1>
+	</header>
+	<section class="slide" id="first-slide">
+		<h2>Web Testing Framework in Python</h2>
+		<p>by Abhirath Mahipal</p>		
+
+		<style>
+			#first-slide h2 {
+					margin:30px 0 0;
+					text-align:center;
+					font-size:60px;
+					}
+
+			#first-slide p {
+				margin:10px 0 0;
+				text-align:center;
+				font-style:italic;
+				font-size:20px;
+				}
+
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Need</h2>
+		<ol>
+			<li>Repetitive tasks like clicking, inputting and checking simple conditions.</li>
+			<li>RELATIVELY easier path for non programmers to write test cases in a language which is close to English</li>
+			<li>Easily adding more functionality for use by more experiencesd users.</li>
+			<li>Headless testing, parallel test execution and easy to digest reports.</li>
+		</ol>
+	</section>
+
+	<section class="slide" id="cover">
+
+		<img src="pictures/tech-stack.jpg" alt="Tech Stack" class="cover">
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+				-->
+			<style>
+				#cover h2 {
+					margin:30px 0 0;
+					color:#FFF;
+					text-align:center;
+					font-size:70px;
+					}
+				#cover p {
+					margin:10px 0 0;
+					text-align:center;
+					color:#FFF;
+					font-style:italic;
+					font-size:20px;
+					}
+					#cover p a {
+						color:#FFF;
+						}
+			</style>	
+
+	</section>
+
+	<section class="slide">
+		<h2>Structure</h2>
+		<ul>
+			<li>Tests are written in Lisp</li>
+			<li>Pre-processing stage.
+				<ol>
+					<li>Imports - simple read and append to list.</li>
+					<li>All functions are stripped into list entries.</li>
+					<li>Irrelevant stuff removed. The end solution isn't very elegant. Just pieces forced to work due to lack of insight and options.</li>
+				</ol>
+			</li>
+		</ul>
+	</section>
+	<section class="slide">
+	<h2>continued...</h2>
+	<ul>
+		<li>hy generates JSON in accordance to function declarations.</li>
+		<li>JSON is translated into appropriate selenium commands.</li>
+		<li>Test analysis reports are rendered using Jinja templates.</li>
+	</ul>
+	</section>
+	<section class="slide">
+		<h2>Dictionaries vs Lists</h2>
+		<ul>
+			<li>For our given purposes consider Dictionaries to represent Abstract Syntax Trees.</li>
+			<li>Dictionaries are most likely to be used in YAML or JSON to write the test cases. This forces a person to remember and write both the key and the value. Lists could be used but they become difficult to validate (has the user entered everything that needs to be entered etc).</li>
+			<li>Validation functions for dictionaries are easier. Keys are likely to be repeated in every API. Common functions can be written.</li>
+			
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>continued...</h2>
+		<ul>
+			<li>The number of arguments taken by click differs from that of input. A new function is required to validate each and every API provided by Glitch</li>
+			<li>Say we use a particular value often and want to set a default. We could use a simple check to see if the key exists. If it doesn't provide a default value.</li>
+			<li>Lists force a person to remember the order of the arguments.</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Why Lisp?</h2>
+		<ul>
+			<li>Well suited for custom syntax and query languages. FYI:- Lisp is a versatile choice when it comes to writing query languages similar to those used to query MySQL, sqlite etc.</li>
+			<li>Very limited language grammar.</li>
+			<li>Easy to read.</li>
+			<li>Libraries to parse Lisp in Python exist.</li>
+			<li>The ease of using existing code surpasses the little benefit over a custom built parser. No regex, CFG and mind bloggling loops.</li>
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>Code Samples</h2>
+		<ol>
+			<li><a href="code.html#json-compare" target="_blank">JSON</a></li>
+			<li><a href="code.html#lisp-compare" target="_blank">Lisp</a></li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>Custom English Like Syntax?</h2>
+		<ol>
+			<li>Difficulties while extending APIs. Rewrite parts of the parser and chances of breaking existing test code every time new features are introduced.</li>
+			<li>Little benefit over Lisp.</li>
+			<li>Inability to use functions of a powerful and evolved language.</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Write Pythonic Lisp Using hylang</h2>
+		<ol>
+			<li>Directly converts Lisp code you write into Python abstract syntax tree.</li>
+			<li>Supports macros.</li>
+			<li>Python list comprehensions.</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>Credits &amp; Resources</h2>
+		<ul>
+			<li>Everyone at Logic Soft for their support and insights.</li>
+			<li><a href="http://norvig.com/lispy.html">Norvig's Lispy</a> - Great ideas which helped parse and tokenize stuff.</li>
+			<li><a href="http://www.gigamonkeys.com/book/">Practical Common Lisp</a> - Quickly get started with Lisp by creating practical mini applications.</li>
+			<li>Wish I had taken note of all the resources I had referred to. These are all I remember.</li>
+		</ul>
+	</section>	
+	<div class="progress"></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+</body>
+</html>

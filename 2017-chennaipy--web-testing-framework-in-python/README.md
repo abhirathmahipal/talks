@@ -1,0 +1,1 @@
+Presentation made using [Shower](https://github.com/shower/shower). Shower is a nifty presentation engine.
